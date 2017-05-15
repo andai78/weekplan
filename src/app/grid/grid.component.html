@@ -1,3 +1,6 @@
-<p>
-  grid works!
-</p>
+<div class="wrapper">
+  <div class="container" *ngFor="let g of groups" [dragula]="firstBag">
+      <h3 [innerHtml]="g.name"></h3>
+      <div *ngFor="let item of g.items" [innerHtml]="item.name"></div>
+  </div>
+</div>

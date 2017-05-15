@@ -7,6 +7,8 @@ import { AppComponent } from './app.component';
 
 import { GridModule } from './grid/grid.module';
 
+import { CrudLocalstorageService } from './services/crud-localstorage.service';
+
 @NgModule({
   declarations: [
     AppComponent
@@ -17,7 +19,7 @@ import { GridModule } from './grid/grid.module';
     HttpModule,
     GridModule
   ],
-  providers: [],
+  providers: [CrudLocalstorageService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
