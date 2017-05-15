@@ -8,10 +8,12 @@ import { AppComponent } from './app.component';
 import { GridModule } from './grid/grid.module';
 
 import { CrudLocalstorageService } from './services/crud-localstorage.service';
+import { AddFormComponent } from './add-form/add-form.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    AddFormComponent
   ],
   imports: [
     BrowserModule,

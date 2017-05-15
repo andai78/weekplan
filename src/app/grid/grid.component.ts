@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { DragulaDirective } from 'ng2-dragula/ng2-dragula';
 import { DragulaService } from 'ng2-dragula/ng2-dragula';
 
+import { Task } from '../task';
 
 @Component({
   selector: 'grid',
@@ -9,7 +10,7 @@ import { DragulaService } from 'ng2-dragula/ng2-dragula';
   styleUrls: ['./grid.component.css']
 })
 export class GridComponent implements OnInit {
-
+  @Input() tasks: Task[];
   todo:string = "To do";
   today:string = "Today";
   inProgress:string = "In Progress";
@@ -35,16 +36,16 @@ export class GridComponent implements OnInit {
 
    }
 
-  /*ngOnInit() {
+  ngOnInit() {
     this.groups = [
-      {name: this.todo, items: []},
+      {name: this.todo, items: this.tasks},
       {name: this.today, items: []},
       {name: this.inProgress, items: []},
       {name: this.done, items: []}
       ]
-  }*/
+  }
 
-  ngOnInit() {
+  /*ngOnInit() {
     this.groups = [
         {
           name: this.todo,
@@ -91,7 +92,7 @@ export class GridComponent implements OnInit {
           ]
         }
       ]
-  }
+  }*/
 
     private onDrag(args) {
     let [e, el] = args;
