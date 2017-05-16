@@ -19,4 +19,8 @@ export class AppComponent implements OnInit {
     this.tasks = this.crud.getTasks();
     console.log('App component', this.tasks)
   }
+
+  updateTask(task: Task){
+    console.log(task)
+  }
 }

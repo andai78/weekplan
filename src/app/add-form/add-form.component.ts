@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { Task } from '../task';
 
 @Component({
@@ -10,6 +10,7 @@ export class AddFormComponent implements OnInit {
 
   taskTitle:string;
   taskDescription:string;
+  @Output() onTaskAdd = new EventEmitter();
 
   constructor() { }
 
@@ -27,6 +28,7 @@ export class AddFormComponent implements OnInit {
     };
     this.taskTitle = "";
     this.taskDescription = "";
+    this.onTaskAdd.emit(task);
   }
 
 }

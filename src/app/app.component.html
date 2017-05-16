@@ -1,4 +1,5 @@
 <h1>
   {{title}}
 </h1>
+<add-form (onTaskAdd)="updateTask($event)"></add-form>
 <grid [tasks]="tasks"></grid>

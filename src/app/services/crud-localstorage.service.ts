@@ -31,4 +31,13 @@ export class CrudLocalstorageService {
       return this.tasks;
   }
 
+  createTask(task: Task){
+    this.tasks = this.getTasks();
+    let id = 1;
+    if(this.tasks && this.tasks.length > 0){
+      id = this.tasks.length ++;
+    }
+    task.id = id;
+  }
+
 }
